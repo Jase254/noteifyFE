@@ -1,20 +1,18 @@
 import React, {Component} from 'react';
-import {Image, Card, Label} from "semantic-ui-react";
-import {Link} from "react-router-dom";
+import {Image, Card, Label, Button, Container} from "semantic-ui-react";
 
-function KeyLinks(props){
-  const tags = Object.keys(props.tags).map((key) =>
-    <Label key={key}
-           as={Link}
-           to={'/search/'+props.tags[key]}
-    >
-      {props.tags[key]}
-    </Label>
-  );
-  return tags;
-}
 
 class BoardImage extends Component {
+  KeyLinks(){
+    const tags = Object.keys(this.props.tags).map((key) =>
+      <Label key={key}
+             onClick={() => this.props.handleSearchButtonState(this.props.tags[key])}
+      >
+        {this.props.tags[key]}
+      </Label>
+    );
+    return tags;
+  }
   render() {
     return (
       <Card color={'red'}>
@@ -39,7 +37,9 @@ class BoardImage extends Component {
         </Card.Content>
         <Card.Content extra>
           Tags: <br/>
-          <KeyLinks tags={this.props.tags}/>
+          <Container>
+          {this.KeyLinks()}
+          </Container>
         </Card.Content>
       </Card>
     );

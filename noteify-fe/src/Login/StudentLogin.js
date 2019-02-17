@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import {Button, Form, Grid, Header, Image, Message, Segment, Container} from "semantic-ui-react";
+import {Button, Form, Grid, Header, Image, Message, Segment, Container, Icon} from "semantic-ui-react";
 import {Redirect} from "react-router";
 import {Link} from "react-router-dom";
 
@@ -47,11 +47,11 @@ class StudentLogin extends Component {
 
         if (this.state.valid === false) {
             return (
-                <Container className='login-form'>
+                <Container className='login-form' style={{marginTop: '7em'}}>
                     <Grid textAlign='center' style={{height: '100%'}} verticalAlign='middle'>
                         <Grid.Column style={{maxWidth: 450}}>
-                            <Header as='h2' color={'red'} textAlign='center'>
-                                <Image src='/logo.png'/> Log-in to your account
+                            <Header as='h2' inverted textAlign='center'>
+                                <Icon name='sticky note' inverted /> Log-in to your account
                             </Header>
                             <Form error size='large'>
                                 <Segment stacked>
@@ -73,7 +73,7 @@ class StudentLogin extends Component {
                                         null
                                     }
 
-                                    <Button color={'red'} fluid size='large' onClick={this.handleSubmit}>
+                                    <Button color={'black'} fluid size='large' onClick={this.handleSubmit}>
                                         Login
                                     </Button>
                                 </Segment>

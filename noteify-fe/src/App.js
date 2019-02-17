@@ -5,6 +5,7 @@ import {BrowserRouter, Route} from "react-router-dom";
 import Student from './StudentView/Student'
 import StudentLogin from './Login/StudentLogin'
 import ProfessorLogin from './Login/ProfessorLogin';
+import './App.css';
 
 
 class App extends Component {
