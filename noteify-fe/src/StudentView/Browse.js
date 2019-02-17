@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Container} from 'semantic-ui-react'
+import {Card, Container} from 'semantic-ui-react'
 import 'semantic-ui-css/semantic.css'
 import BoardImage from "../BoardImage/BoardImage";
 
@@ -29,8 +29,10 @@ class Browse extends Component {
   }
   render() {
     return (
-      <Container>
+      <Container style={{marginTop: '7em'}}>
+        <Card.Group centered>
         {this.state.data}
+        </Card.Group>
       </Container>
     );
   }
