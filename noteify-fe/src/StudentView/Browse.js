@@ -7,19 +7,20 @@ class Browse extends Component {
   state = {data: null};
 
   componentDidMount() {
-    fetch('http://ec2-54-193-114-159.us-west-1.compute.amazonaws.com:5000/test', {
+    fetch('http://ec2-54-193-114-159.us-west-1.compute.amazonaws.com:5000/browse', {
       method: 'GET',
     }).then(
       (res) => res.json()
     ).then(
       data => {
+        const url = 'http://ec2-54-193-114-159.us-west-1.compute.amazonaws.com:5000/static/';
         const cards = Object.keys(data).map((key) =>
           <BoardImage
             key={key}
-            src={key}
-            header={key.split("static/")[1]}
+            src={url+key}
+            header={key}
             posted={'Posted Today'}
-            description={'This photo was taken when everyone was less tired'}
+            description={'Professor supplied description'}
             tags={data[key]}
           />
         );

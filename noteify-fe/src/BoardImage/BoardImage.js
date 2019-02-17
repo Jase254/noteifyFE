@@ -1,5 +1,18 @@
 import React, {Component} from 'react';
-import {Image, Card} from "semantic-ui-react";
+import {Image, Card, Label} from "semantic-ui-react";
+import {Link} from "react-router-dom";
+
+function KeyLinks(props){
+  const tags = Object.keys(props.tags).map((key) =>
+    <Label key={key}
+           as={Link}
+           to={'/search/'+props.tags[key]}
+    >
+      {props.tags[key]}
+    </Label>
+  );
+  return tags;
+}
 
 class BoardImage extends Component {
   render() {
@@ -26,7 +39,7 @@ class BoardImage extends Component {
         </Card.Content>
         <Card.Content extra>
           Tags: <br/>
-          {this.props.tags}
+          <KeyLinks tags={this.props.tags}/>
         </Card.Content>
       </Card>
     );
