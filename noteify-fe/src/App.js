@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './App.css';
 import {Container} from 'semantic-ui-react'
 import 'semantic-ui-css/semantic.css'
 import {BrowserRouter, Route} from "react-router-dom";
